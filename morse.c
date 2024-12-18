@@ -18,7 +18,7 @@ static const char* morse_dict[128] = {
 
     ['1'] = ".----", ['2'] = "..---", ['3'] = "...--", ['4'] = "....-",
     ['5'] = ".....", ['6'] = "-....", ['7'] = "--...", ['8'] = "---..",
-    ['9'] = "----.", ['0'] = "-----", [' '] = "......."
+    ['9'] = "----.", ['0'] = "-----", [' '] = "..."
 };
 
 void ascii_to_morse(const char* text, morse_callback_t callback) {
@@ -30,7 +30,8 @@ void ascii_to_morse(const char* text, morse_callback_t callback) {
                     callback(MORSE_DOT);
                 } else if (morse[j] == '-') {
                     callback(MORSE_DASH);
-                }
+                } 
+
             }
             callback(MORSE_WSEP);
         }
