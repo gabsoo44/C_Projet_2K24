@@ -4,7 +4,7 @@
 #include "mqtt.h"
 
 void on_message(MQTTClient_message* message, morse_callback_t callback) {
-    printf("Message MQTT reçu : %.*s\n", message->payloadlen, (char*)message->payload);
+    printf("MQTT Message received: %.*s\n", message->payloadlen, (char*)message->payload);
     ascii_to_morse((char*)message->payload, callback);
     MQTTClient_freeMessage(&message);
 }
